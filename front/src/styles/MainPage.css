@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-title {
+  @apply text-4xl md:text-5xl font-bold mb-6 leading-tight;
+}
+
+.main-description {
+  @apply text-lg text-gray-300 mb-8 max-w-xl mx-auto;
+}

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.feature-section {
+  @apply py-24 px-8 text-white;
+}
+
+.feature-grid {
+  @apply grid gap-10 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto;
+}
+
+.feature-card {
+  @apply rounded-2xl p-8 text-white shadow-xl hover:shadow-2xl transition duration-300 min-h-[240px] bg-cover bg-center bg-no-repeat flex flex-col justify-center;
+}
+
+.feature-card-title {
+  @apply text-2xl font-semibold mb-3;
+}
+
+.feature-card-desc {
+  @apply text-base leading-relaxed;
+}

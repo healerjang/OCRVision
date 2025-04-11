@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.faq-wrapper {
+  @apply space-y-6 max-w-xl text-gray-300 text-left;
+}
+
+.faq-question {
+  @apply font-semibold text-white;
+}

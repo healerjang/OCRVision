@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.examples-list {
+  @apply space-y-4 text-lg text-gray-300;
+}

@@ -1,0 +1,22 @@
+/* UploadPage.css */
+.file-upload-button {
+    background-color: #6366f1; /* btn-indigo */
+    color: white;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .file-upload-button:hover {
+    background-color: #4f46e5;
+  }
+  
+  .file-name-label {
+    font-size: 0.875rem;
+    color: #d1d5db; /* text-gray-300 */
+  }
+  

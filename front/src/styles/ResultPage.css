@@ -1,0 +1,29 @@
+.result-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1100px; /* 넓이 증가 */
+}
+
+.result-image-box,
+.result-text-box {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(31, 41, 55, 0.85);
+  overflow: visible; /* 이미지 안 짤리게 */
+}
+
+.result-image-box img {
+  max-width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .result-wrapper {
+    flex-direction: row;
+  }
+}
