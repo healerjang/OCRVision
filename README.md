@@ -1,3 +1,4 @@
+![표지](https://github.com/user-attachments/assets/6a27bdce-9ebb-43dc-8284-e862627f53b4)
 # OCRVision
 이미지 속 글자, 한눈에 쏙! OCR로 쉽고 빠르게 텍스트 추출부터 시각화까지 한 번에!
 
