@@ -1,19 +1,16 @@
 import numpy as np
 import cv2
 
-def get_boxes(model, image):
+def get_boxes(model, image, reader):
     prediction = __get_prediction(model, image)
-    return __find_bounding_rectangles(prediction)
+    results = reader.readtext(image)
+    return results
 
-def get_text(image, reader, position, padding=(3, 10)):
-    crp_image = image[position[0]-padding[0]:position[1]+padding[0], position[2]-padding[1]:position[3]+padding[1]]
-    results_text = []
-    results = reader.readtext(crp_image)
-    if len(results) == 0:
-        return [""]
-    for result in results:
-        results_text.append(result[1])
-    return results_text
+def get_text(text_info):
+    coord = text_info[0]
+    text = text_info[1]
+    y_start, y_end, x_start, x_end = coord[0][1], coord[2][1], coord[0][0], coord[1][0]
+    return int(y_start), int(y_end), int(x_start), int(x_end), text
 
 def __get_prediction(model, image):
     threshold = 127

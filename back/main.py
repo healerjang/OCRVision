@@ -37,7 +37,7 @@ def upload_and_stream():
     file_bytes = np.frombuffer(file.read(), np.uint8)
     img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
 
-    text_boxes = get_boxes(model, img)
+    text_boxes = get_boxes(model, img, reader)
     if len(text_boxes) == 0:
         return jsonify({
             "statusCode": 1,
@@ -59,17 +59,19 @@ def upload_and_stream():
         for text_box in text_boxes:
             progress_count += 1
             response["progressCount"] = progress_count
+            try:
+                y_start, y_end, x_start, x_end, text = get_text(text_box)
+                result.append({
+                    "start_y": y_start,
+                    "end_y": y_end,
+                    "start_x": x_start,
+                    "end_x": x_end,
+                    "text": text
+                })
 
-            text_result = get_text(img, reader, text_box)
-            result.append({
-                "start_y": text_box[0],
-                "end_y": text_box[1],
-                "start_x": text_box[2],
-                "end_x": text_box[3],
-                "text": text_result
-            })
-
-            yield json.dumps(response) + "\n"
+                yield json.dumps(response) + "\n"
+            except Exception as e:
+                print(e)
 
         response["result"] = result
         yield json.dumps(response) + "\n"
