@@ -29,8 +29,8 @@
 6. 패키지가 모두 다운로드 되면 가상환경 터미널에서 python main.py를 실행시켜주세요.
 
 ## 프로젝트 화면
-![OCRVision](https://github.com/user-attachments/assets/46db2fe7-9b16-4b53-856a-1ddc9c951d12)
 
+![OCRVision (1)](https://github.com/user-attachments/assets/81ebe06b-c1ee-4a67-a64d-83f466858737)
 
 
 
